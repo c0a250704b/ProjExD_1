@@ -20,17 +20,19 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        
+        white = 0 #演習２
+        hight = 0 #演習２
         kk_rct.move_ip((-1, 0)) #演習１
         key_lst = pg.key.get_pressed() #練習１０
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0, -1)) #練習１０
+            hight -= 1 #演習２
         if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0, 1)) #練習１０
+            hight += 1 #演習２
         if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1, 0)) #練習１０
+            white -= 1 #演習２
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((2, 0)) #練習１０と演習１
+            white += 2 #演習２
+        kk_rct.move_ip((white,hight)) #演習２
         x = tmr % 3200 #練習５と９
         screen.blit(bg_img, [-x, 0]) #練習２と５
         screen.blit(flip_bg_img, [-x+1600, 0]) #練習７と８
