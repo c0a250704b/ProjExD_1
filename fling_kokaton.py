@@ -20,9 +20,8 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        white = 0 #演習２
+        white = -1 #演習２
         hight = 0 #演習２
-        kk_rct.move_ip((-1, 0)) #演習１
         key_lst = pg.key.get_pressed() #練習１０
         if key_lst[pg.K_UP]:
             hight -= 1 #演習２
